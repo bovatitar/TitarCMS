@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin','Admin\IndexController@index');
+Route::get('/admin/login','Admin\IndexController@loginPage');
+
