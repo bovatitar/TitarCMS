@@ -18,8 +18,8 @@ class CreateUserTable extends Migration
             $table->string('login', 255);
             $table->string('password', 255);
             $table->string('email', 255);
-            $table->string('token', 255);
-            $table->dateTime('last_login');
+            $table->string('token', 255)->nullable();
+            $table->dateTime('last_login')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
