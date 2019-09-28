@@ -17,7 +17,7 @@ class CreateContentTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 255);
             $table->string('alias', 255);
-            $table->integer('category_id');
+            $table->unsignedBigInteger('category_id');
             $table->boolean('published');
             $table->integer('hits');
             $table->text('introtext');

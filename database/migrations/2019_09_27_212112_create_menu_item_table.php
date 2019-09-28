@@ -16,11 +16,12 @@ class CreateMenuItemTable extends Migration
         Schema::create('menu_item', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 255);
-            $table->integer('menu_id');
+            $table->unsignedBigInteger('menu_id');
             $table->string('alias',255);
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('menu_id')->references('id')->on('menu');
+
         });
     }
 
