@@ -15,6 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin','Admin\IndexController@index');
-Route::get('/admin/login','Admin\IndexController@loginPage');
+
+Route::prefix('admin')->group(function () {
+    Route::get('/','Admin\IndexController@index');
+
+    Route::get('/login','Admin\IndexController@loginPage')->name("login");
+    Route::post('/login','Admin\IndexController@login');
+
+    Route::get('/logout','Admin\IndexController@logout');
+    Route::post('/logout','Admin\IndexController@logout');
+});
+
+
 

@@ -1,15 +1,21 @@
 @extends('admin.layouts.app')
 
 @section('content')
+    @if(session("notification") && session("notificationStatus"))
+        <script>
+            UIkit.notification('{{session("notification")}}', "{{session("notificationStatus")}}");
+        </script>
+    @endif
+
     <div uk-height-viewport="expand: true" class="uk-flex uk-flex-column uk-flex-center uk-flex-middle uk-width-1-1">
-        <h3>{{$title}} - Админ-панель</h3>
-        <form onsubmit="event.preventDefault(); auth(event.target);">
+        <h3>{{$title}}</h3>
+        <form method="POST">
             {{ csrf_field() }}
             {{ method_field('POST') }}
             <div class="uk-margin">
                 <div class="uk-inline">
                     <span class="uk-form-icon" uk-icon="icon: user"></span>
-                    <input name="login" placeholder="Логин" class="uk-input" type="text">
+                    <input name="login" placeholder="Логин"value="{{old("login")}}" class="uk-input" type="text">
                 </div>
             </div>
 

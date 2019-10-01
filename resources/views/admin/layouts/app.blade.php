@@ -14,6 +14,10 @@
 </head>
 
 <body>
+@if(!isset($hideMenu) || $hideMenu === false)
+{{--    @include('admin.components.navbar')--}}
+@endif
+
 @yield('content')
 
 
