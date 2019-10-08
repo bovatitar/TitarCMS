@@ -29,4 +29,16 @@ class UserHelper
         return false;
     }
 
+    public function checkAuth(Request $request){
+        $login = $request->cookie('user');
+        $token = $request->cookie('token');
+        if($login != null && $token != null){
+            $user = User::where("login",$login)->first();
+            if($token == $user->token){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

@@ -10,7 +10,7 @@ class Menu extends Model
 
     public function items()
     {
-        return $this->hasMany('MenuItem', "menu_id", "id");
+        return $this->hasMany('App\Entities\MenuItem', "menu_id", "id");
     }
 
 }

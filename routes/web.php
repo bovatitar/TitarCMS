@@ -19,6 +19,10 @@ Route::get('/', function () {
 Route::prefix('admin')->group(function () {
     Route::get('/','Admin\IndexController@index');
 
+    Route::prefix("menu")->group(function (){
+        Route::get('/','Admin\MenuController@index')->name("menu");
+    });
+
     Route::get('/login','Admin\IndexController@loginPage')->name("login");
     Route::post('/login','Admin\IndexController@login');
 

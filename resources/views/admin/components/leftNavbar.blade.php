@@ -9,7 +9,7 @@
 {{--            <li class="uk-active"><a href="#"><span class="uk-margin-small-right" uk-icon="icon: pencil"></span> Посты</a></li>--}}
             <li class=""><a href="#"><span class="uk-margin-small-right" uk-icon="icon: pencil"></span> Посты</a></li>
             <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: comments"></span> Комментарии</a></li>
-            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: menu"></span> Меню</a></li>
+            <li><a href="/admin/menu"><span class="uk-margin-small-right" uk-icon="icon: menu"></span> Меню</a></li>
 
             <li class="uk-nav-divider"></li>
             <li class="uk-nav-header">Магазин</li>

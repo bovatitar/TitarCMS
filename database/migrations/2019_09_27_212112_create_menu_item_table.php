@@ -18,6 +18,8 @@ class CreateMenuItemTable extends Migration
             $table->string('name', 255);
             $table->unsignedBigInteger('menu_id');
             $table->string('alias',255);
+            $table->integer("order");
+            $table->boolean("enabled")->default(true);
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('menu_id')->references('id')->on('menu');

@@ -1,0 +1,34 @@
+.t-background-danger{
+    background: #f0506e;
+}
+
+.t-padding-small-left{
+    padding-left: 15px;
+}
+.t-padding-small-right{
+    padding-right: 15px;
+}
+
+.t-border-right{
+    border-right: 1px solid #e5e5e5 !important;
+}
+.t-border-left{
+    border-right: 1px solid #e5e5e5 !important;
+}
+.t-border-vertical{
+    border-right: 1px solid #e5e5e5 !important;
+    border-left: 1px solid #e5e5e5 !important;
+}
+.t-border-horizontal{
+    border-top: 1px solid #e5e5e5 !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+}
+.t-border-bottom{
+    border-bottom: 1px solid #e5e5e5 !important;
+}
+.t-border-top{
+    border-top: 1px solid #e5e5e5 !important;
+}
+.t-border{
+    border: 1px solid #e5e5e5 !important;
+}

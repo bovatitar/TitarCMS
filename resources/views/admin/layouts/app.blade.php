@@ -8,6 +8,7 @@
     <meta name="description" content="Админ-панель">
     <meta property="og:description" content="Админ-панель">
     <title>Админ-панель</title>
+    <link href="{{URL::to('/')}}/css/titar.css" rel="stylesheet">
     <link href="{{URL::to('/')}}/css/uikit.css" rel="stylesheet">
     <script src="{{URL::to('/')}}/js/uikit.min.js"></script>
     <script src="{{URL::to('/')}}/js/uikit-icons.min.js"></script>

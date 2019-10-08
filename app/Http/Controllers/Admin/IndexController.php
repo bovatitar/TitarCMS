@@ -7,32 +7,37 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Route;
 
 use App\Entities\User;
 use App\Report;
 
 use App\Helpers\UserHelper;
+use App\Helpers\RouteHelper;
 
 class IndexController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function __construct(Request $request, UserHelper $userHelper)
+    public function __construct(Request $request, UserHelper $userHelper, RouteHelper $routeHelper)
     {
         $this->appTitle = env('APP_NAME');
+        $this->routeName = Route::currentRouteName();
         $this->userHelper = $userHelper;
+        $this->routeHelper = $routeHelper;
     }
 
     public function index(Request $request)
     {
-        $auth = $this->checkAuth($request);
+        $auth = $this->userHelper->checkAuth($request);
         if($auth == true){
             return view('admin.pages.index',[
                 "user" => $this->userHelper->getLoggedUser($request),
-                "title" => $this->appTitle
+                "title" => $this->appTitle,
+                "routeName" => Route::currentRouteName(),
             ]);
         }else{
-            return redirect()->action('Admin\IndexController@loginPage')->withCookie(cookie('user', "", 0))->withCookie(cookie('token', "", 0));
+            return $this->routeHelper->redirectToLogin();
         }
     }
 
